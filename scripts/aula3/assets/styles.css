@@ -1,0 +1,16 @@
+p {
+    /* https://www.w3schools.com/css/css_text.asp */
+    font-size: 20px; /* TAMANHO DA LETRA */
+    font-family: sans-serif; /* FONTE DA LETRA */
+    font-style: italic; /* DEIXAR A LETRA EM ITALICO (ESTILO DA LETRA) */
+    font-weight: bold; /* DEIXAR EM NEGRITO */
+    direction: ltr; /* COMEÇAR AS FRASES DA ESQUERDA PRA DIREITA OU VICE-VERSA */
+    letter-spacing: 1px; /* ESPAÇO ENTRE AS LETRAS */
+    word-spacing: 5px; /* ESPAÇO ENTRE AS PALAVRAS */
+    line-height: 25px; /* ALTURA DA LINHA */
+    text-align: center; /* ALINHAR O TEXTO */
+    text-decoration: underline; /* LINHA EMBAIXO, NO MEIO OU ENCIMA DO TEXTO */
+    text-indent: 50px; /* ESPAÇO ANTES DE INICIAR O TEXTO */
+    text-shadow: 0 0 0 red; /* SOMBRAS NO TEXTO (CIMA/BAIXO -- ESQUERDA DIREITA -- BLUR -- COR) */
+    text-transform: capitalize; /* ALTERAR ENTRE LETRAS MAIUSCULAS E MINUSCULAS */
+}1
