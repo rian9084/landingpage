@@ -1,0 +1,337 @@
+.intro-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: (--gap);
+    min-height: 100vh;
+}
+
+.close-menu {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menu-spacing {
+        display: none;
+    }
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+    .intro-content h2 {
+        font-size: 4rem;
+    }
+
+    .menu {
+        bottom: 0;
+        text-align: center;
+    }
+
+    .menu-content, .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    .close-menu {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.menu {
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+}
+
+.intro-text-content, .intro-img {
+    gap: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-content .intro-text-content h2 {
+    margin-bottom: 1rem;
+}
+
+.intro-img {
+    margin-left: 3rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.summary-content {
+    text-align: center;
+    max-width: 70rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.summary-content h5, h6 {
+    margin-bottom: 2rem;
+}
+
+.grid-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    counter-reset: grid-counter;
+}
+
+.grid-container h2 {
+    margin-bottom: 2rem;
+}
+.grid-container p {
+    margin-bottom: 10rem;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+@media (max-width: 750px) {
+    .grid-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 1200px) {
+    .grid-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-content h6 {
+    position: relative;
+    padding-left: 7vh;
+}
+
+.grid-content h6::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    top: -3rem;
+    left: 0vh;
+    font-size: 7rem;
+    font-style: italic;
+    transform: rotate(3deg);
+}
+
+.gallery-container h2 {
+    margin-bottom: 0rem;
+}
+
+.gallery-container p {
+    margin-bottom: 1rem;
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 33rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.table-content {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.table-text-content h2 {
+    margin-bottom: 4rem;
+}
+
+
+.table-container {
+    min-width: 36rem;
+    width: 100%;
+    background-color: rgba(81, 81, 81, 0.048);
+    border: rgba(133, 133, 133, 0.074) solid 0.4rem;
+    line-height: 4rem;
+    margin-top: 3rem;
+    transition: all 300ms ease;
+    border-collapse: collapse;
+
+}
+.table-container:hover {
+    border: rgba(255, 255, 255, 0.041) solid 0.4rem;
+    box-shadow: 0.5rem 0.5rem var(--orange-color) ;
+}
+
+.table-container th, td {
+    font-weight: normal;
+    white-space: nowrap;
+    color: var(--primary-color);
+    border: var(--light-gray-color) solid 0.1rem;
+}
+
+.table-container th:hover, td:hover {
+    background-color: var(--light-gray-color);
+    color: var(--primary-color);
+    border: var(--primary-color) solid 0.1rem;
+}
+
+.table-container .th1 {
+    border: initial;
+}
+
+.table-container .th1:hover {
+    border: initial;
+}
+
+.form-content {
+    display: flex;
+    grid-area: span 2;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -5rem;
+    left: -4rem;
+}
+
+.form-grid legend {
+    text-align: center;
+    padding: 2rem;
+    text-transform: uppercase;
+}
+
+.form-content .form-grid {
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+.form-group {
+    flex: 1 1 32rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group textarea,
+ .form-group input {
+    border-color: var(--light-gray-color);
+    background-color: rgba(105, 105, 105, 0.3);
+    border: 0.1rem solid;
+    border-radius: 2rem;
+    width: 100%;
+    height: 4rem;
+    transition: all 300ms ease-in-out;
+    padding: 0.3rem 2rem;
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-top: 0.4rem;
+}
+
+.form-group textarea{
+    height: 8rem;
+}
+
+.form-group textarea:hover,
+.form-group input:hover {
+    background-color: rgba(105, 105, 105, 0.67);
+}
+
+.form-group button {
+    position: absolute;
+    border-color: var(--light-gray-color);
+    border-style: solid;
+    border-radius: 2rem;
+    width: 15rem;
+    height: 5rem;
+    top: -2rem;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    background-color: var(--blue-gray-color);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.footer {
+    margin: 0;
+    padding: 3rem;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+.footer .heart {
+    color: red;
+}
+
+.back-top {
+    color: var(--primary-color);
+    background: var(--white-color);
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: rotate(270deg);
+    border: 0.1rem solid var(--primary-color);
+    transition: all 300ms ease-in-out;
+}
+
+.back-top:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 0.1rem solid var(--white-color);
+}
